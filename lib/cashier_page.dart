@@ -216,9 +216,9 @@ class _CashierPageState extends State<CashierPage> {
                                 child: Row(
                                   children: [
                                     Visibility(
-                                      visible:
-                                          (products[index]['quantity'] ?? 0) >
-                                              0,
+                                      visible: (products[index]['quantity'] ??
+                                              0) >
+                                          0, // Hanya tampil jika quantity lebih dari 0
                                       child: GestureDetector(
                                         onTap: () {
                                           _KurangiItemBeli(index);
@@ -233,19 +233,14 @@ class _CashierPageState extends State<CashierPage> {
                                         ),
                                       ),
                                     ),
-                                    Visibility(
-                                      visible:
-                                          (products[index]['quantity'] ?? 0) >
-                                              0,
-                                      child: SizedBox(
-                                        width: 40,
-                                        child: Center(
-                                          child: Text(
-                                            "${products[index]['quantity'] ?? 0}",
-                                            style: const TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                    SizedBox(
+                                      width: 40,
+                                      child: Center(
+                                        child: Text(
+                                          "${products[index]['quantity'] ?? 0}",
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                         ),
                                       ),
